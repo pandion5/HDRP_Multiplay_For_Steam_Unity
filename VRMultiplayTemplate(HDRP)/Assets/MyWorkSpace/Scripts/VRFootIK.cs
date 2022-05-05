@@ -20,7 +20,6 @@ public class VRFootIK : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
         animator = GetComponent<Animator>();
     }
 
