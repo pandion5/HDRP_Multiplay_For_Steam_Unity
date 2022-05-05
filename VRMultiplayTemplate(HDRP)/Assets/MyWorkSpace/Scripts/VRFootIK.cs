@@ -16,11 +16,11 @@ public class VRFootIK : MonoBehaviour
     [Range(0, 1)]
     public float leftFootRotWeight = 1;
 
-    private int layerMask;
+
     // Start is called before the first frame update
     void Start()
     {
-        layerMask = (-1) - (1 << LayerMask.NameToLayer("Player"));
+
         animator = GetComponent<Animator>();
     }
 
@@ -29,6 +29,9 @@ public class VRFootIK : MonoBehaviour
         Vector3 rightFootPos = animator.GetIKPosition(AvatarIKGoal.RightFoot);
 
         RaycastHit hit;
+        int layerMask;
+        layerMask = (1 << LayerMask.NameToLayer("Player"));
+        layerMask = ~layerMask;
         Ray ray = new Ray(rightFootPos + Vector3.up, Vector3.down);
         bool hasHit = Physics.Raycast(ray, out hit, Mathf.Infinity, layerMask);
         if(hasHit)

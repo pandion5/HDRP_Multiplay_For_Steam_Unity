@@ -59,7 +59,6 @@ GameObject:
   - component: {fileID: 4175762134579288294}
   - component: {fileID: 4611286271344649519}
   - component: {fileID: 8915612841935469342}
-  - component: {fileID: 2110374151}
   m_Layer: 0
   m_Name: Network Player
   m_TagString: Untagged
@@ -149,24 +148,6 @@ MonoBehaviour:
     actionPath: /actions/default/in/TouchPad
     needsReinit: 0
   speed: 1
---- !u!143 &2110374151
-CharacterController:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3948828202936503911}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Height: 0.6
-  m_Radius: 0.5
-  m_SlopeLimit: 45
-  m_StepOffset: 0.3
-  m_SkinWidth: 0.08
-  m_MinMoveDistance: 0.001
-  m_Center: {x: 0, y: 0.5, z: 0}
 --- !u!1 &5877777824203649826
 GameObject:
   m_ObjectHideFlags: 0
