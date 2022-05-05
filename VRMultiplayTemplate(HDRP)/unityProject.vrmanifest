@@ -1,0 +1,16 @@
+{
+  "source": "Unity",
+  "applications": [
+    {
+      "app_key": "application.generated.unity.vrmultiplaytemplatehdrp.exe",
+      "launch_type": "url",
+      "url": "steam://launch/",
+      "action_manifest_path": "F:\\UnityWorkspace\\VRMultiplayTemplate(HDRP)\\Assets\\StreamingAssets\\SteamVR\\actions.json",
+      "strings": {
+        "en_us": {
+          "name": "VRMultiplayTemplate(HDRP) [Testing]"
+        }
+      }
+    }
+  ]
+}
