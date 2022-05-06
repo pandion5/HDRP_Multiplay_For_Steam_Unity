@@ -9,7 +9,7 @@ public class TestCode : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        networkManager.ConnectToServer();
+        //networkManager.ConnectToServer();
     }
 
     // Update is called once per frame
