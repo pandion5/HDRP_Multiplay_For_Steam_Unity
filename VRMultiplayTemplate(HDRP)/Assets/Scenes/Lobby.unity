@@ -2739,6 +2739,7 @@ GameObject:
   - component: {fileID: 624860872740216395}
   - component: {fileID: 624860872740216398}
   - component: {fileID: 624860872740216399}
+  - component: {fileID: 624860872740216400}
   m_Layer: 6
   m_Name: Player
   m_TagString: Untagged
@@ -2826,6 +2827,20 @@ MonoBehaviour:
   m_CameraFloorOffsetObject: {fileID: 624860872740210156}
   m_RequestedTrackingOriginMode: 2
   m_CameraYOffset: 1.1176
+--- !u!114 &624860872740216400
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 624860872740216394}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca2e750e7374fec488dc2fb35a61d010, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  portNumber: 4
+  baudRate: 9600
 --- !u!1 &624860872740216984
 GameObject:
   m_ObjectHideFlags: 0
