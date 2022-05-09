@@ -12,6 +12,9 @@ VRMultiplayTemplate(HDRP)/[Mm]emoryCaptures/
 
 # Asset meta data should only be ignored when the corresponding asset is also ignored
 !VRMultiplayTemplate(HDRP)/[Aa]ssets/**/*.meta
+!VRMultiplayTemplate(HDRP)/[Aa]ssets/**/*.asset.meta
+!VRMultiplayTemplate(HDRP)/[Aa]ssets/[Re]sources/[Aa]ssets/*.meta
+!VRMultiplayTemplate(HDRP)/[Aa]ssets/[Re]sources/[Aa]ssets/*.meta.
 
 # Uncomment this line if you wish to ignore the asset store tools plugin
 # VRMultiplayTemplate(HDRP)/[Aa]ssets/AssetStoreTools*
