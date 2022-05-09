@@ -48,6 +48,11 @@ public class DemoArduino : MonoBehaviour
             Debug.Log("충돌");
             fanvalue = "4";
             serial.Write(fanvalue);
+            if (!serial.IsOpen)
+            {
+                fanvalue = "5";
+                serial.Write(fanvalue);
+            }
             /*            servoValue = "u";
                         serial.Write(servoValue);*/
         }
@@ -74,5 +79,12 @@ public class DemoArduino : MonoBehaviour
             fanvalue = "5";
             serial.Write(fanvalue);
         }
+    }
+
+    private void OnApplicationQuit()
+    {
+        Debug.Log("작동종료");
+        fanvalue = "5";
+        serial.Write(fanvalue);
     }
 }
