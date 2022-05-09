@@ -26,4 +26,7 @@ Recoder 컴포넌트의 Transmit Enabled 속성은 켜주세요.
 [Philip Herlitz/How to Get Started with Photon Voice: https://www.youtube.com/watch?v=Pp0UMchtFyo]  
   
 ## TODO
-+산림청 맵 추가
+일단 대부분 끝마침
+
+## 완료
+멀티, 음성 채팅, 산림 맵, 향기 분사
