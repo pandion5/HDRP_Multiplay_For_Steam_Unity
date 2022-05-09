@@ -984,7 +984,7 @@ MonoBehaviour:
   voiceDetectionThreshold: 0.01
   voiceDetectionDelayMs: 500
   unityMicrophoneDevice: 
-  photonMicrophoneDeviceId: -1
+  photonMicrophoneDeviceId: 0
   interestGroup: 0
   debugEchoMode: 0
   reliableMode: 0
@@ -1103,10 +1103,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   defaultRooms:
-  - Name: Room 1
+  - Name: Forest
     sceneIndex: 1
-    maxPLayer: 5
+    maxPLayer: 6
   roomUI: {fileID: 412265963}
+  player: {fileID: 624860872740216394}
 --- !u!4 &1839064853
 Transform:
   m_ObjectHideFlags: 0
@@ -1158,7 +1159,7 @@ GameObject:
   - component: {fileID: 2011766706}
   - component: {fileID: 2011766705}
   m_Layer: 0
-  m_Name: GameManager
+  m_Name: UISelector
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

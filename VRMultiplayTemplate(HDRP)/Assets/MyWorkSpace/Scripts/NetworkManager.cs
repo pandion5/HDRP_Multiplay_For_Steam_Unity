@@ -16,6 +16,7 @@ public class NetworkManager : MonoBehaviourPunCallbacks
 {
     public List<DefaultRoom> defaultRooms;
     public GameObject roomUI;
+    public GameObject player;
 
     public void ConnectToServer()
     {
@@ -56,6 +57,7 @@ public class NetworkManager : MonoBehaviourPunCallbacks
     public override void OnJoinedRoom()
     {
         Debug.Log("Joined a Room");
+        //player.transform.position;
         base.OnJoinedRoom();
     }
 
