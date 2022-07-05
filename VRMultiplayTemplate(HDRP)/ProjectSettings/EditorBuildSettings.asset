@@ -8,6 +8,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Lobby.unity
     guid: d776fdd847d758a45b784947464473ad
+  - enabled: 0
+    path: Assets/Scenes/LobbyKAT.unity
+    guid: 98883c944f874c245a89db1588dd112a
   - enabled: 1
     path: Assets/Scenes/Forest.unity
     guid: ce7d92b0bf4543e42a75f495f848d9ae
