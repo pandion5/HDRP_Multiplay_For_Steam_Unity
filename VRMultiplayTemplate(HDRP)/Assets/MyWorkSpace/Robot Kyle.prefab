@@ -1486,7 +1486,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3c1f627476513c64e9b0e20048a42cab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  root: {fileID: 0}
   turnSmoothness: 3
+  isKyle: 1
   head:
     vrTarget: {fileID: 0}
     rigTarget: {fileID: 4373020251798650526}
@@ -1502,7 +1504,6 @@ MonoBehaviour:
     rigTarget: {fileID: 4373020251937101962}
     trackingPositionOffset: {x: 0, y: 0, z: 0}
     trackingRotationOffset: {x: 90, y: -90, z: 0}
-  headConstraint: {fileID: 4373020251798650526}
 --- !u!114 &8202953721007729554
 MonoBehaviour:
   m_ObjectHideFlags: 0

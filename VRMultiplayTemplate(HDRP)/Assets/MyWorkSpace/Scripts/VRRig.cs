@@ -23,6 +23,8 @@ public class VRRig : MonoBehaviour
 
     public float turnSmoothness;
 
+    public bool isKyle;
+
     public VRMap head;
     public VRMap leftHand;
     public VRMap rightHand;
@@ -43,7 +45,10 @@ public class VRRig : MonoBehaviour
     void FixedUpdate()
     {
         root.position = head.rigTarget.position + headBodyOffset;
-        root.forward = Vector3.Lerp(transform.forward,Vector3.ProjectOnPlane(head.rigTarget.up,Vector3.up).normalized, turnSmoothness);
+        if(isKyle)
+            root.forward = Vector3.Lerp(transform.forward, Vector3.ProjectOnPlane(head.rigTarget.up, Vector3.up).normalized, Time.deltaTime * turnSmoothness);
+        else
+            root.forward = Vector3.Lerp(transform.forward,Vector3.ProjectOnPlane(head.rigTarget.forward,Vector3.up).normalized, Time.deltaTime * turnSmoothness);
 
         head.Map();
         leftHand.Map();

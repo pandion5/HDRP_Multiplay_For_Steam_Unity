@@ -289,6 +289,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   avatars:
   - {fileID: 7453301371685333525, guid: 195ed1f9ea4892f4bae330d2cccf2d2c, type: 3}
+  - {fileID: 7453301371685333525, guid: e90a6076aa41bfc48a6956f10634750f, type: 3}
+  - {fileID: 7453301371685333525, guid: 03c930562e0dac04c9c5163acfa2dc38, type: 3}
+  - {fileID: 7453301371685333525, guid: 3fe234f1a7840284485c857d5dc8ee47, type: 3}
   head: {fileID: 606010955382177880}
   leftHand: {fileID: 4889159302624003708}
   rightHand: {fileID: 9172947355824596571}

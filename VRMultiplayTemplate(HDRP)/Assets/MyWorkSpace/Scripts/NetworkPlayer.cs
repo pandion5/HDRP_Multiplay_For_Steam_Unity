@@ -43,7 +43,7 @@ public class NetworkPlayer : MonoBehaviour
         if(photonView.IsMine)
             photonView.RPC("LoadAvatar", RpcTarget.AllBuffered, PlayerPrefs.GetInt("AvatarID"));
 
-        //--
+        
         characterController = GetComponent<CharacterController>();
     }
 
