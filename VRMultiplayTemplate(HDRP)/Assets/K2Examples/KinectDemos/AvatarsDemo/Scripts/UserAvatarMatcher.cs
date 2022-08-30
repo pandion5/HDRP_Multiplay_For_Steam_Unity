@@ -29,6 +29,8 @@ public class UserAvatarMatcher : MonoBehaviour
 	[Tooltip("Whether to apply the humanoid model's muscle limits or not.")]
 	public bool applyMuscleLimits = false;
 
+	public bool exturnalRootMotion = false;
+
 
 	private KinectManager kinectManager;
 	private int maxUserCount = 0;
@@ -160,6 +162,7 @@ public class UserAvatarMatcher : MonoBehaviour
 
                 ac.groundedFeet = groundedFeet;
 				ac.applyMuscleLimits = applyMuscleLimits;
+				ac.externalRootMotion = exturnalRootMotion;
 			}
 
 			// start the avatar controller

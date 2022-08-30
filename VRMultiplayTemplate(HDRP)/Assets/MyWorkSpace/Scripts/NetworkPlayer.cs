@@ -9,7 +9,9 @@ using Valve.VR.InteractionSystem;
 
 public class NetworkPlayer : MonoBehaviour
 {
+    public NetworkPlayerSpawner networkPlayerSpawner;
     public List<GameObject> avatars;
+    public List<GameObject> kinectAvatars;
 
     public Transform head;
     public Transform leftHand;
@@ -33,13 +35,21 @@ public class NetworkPlayer : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        networkPlayerSpawner = GameObject.Find("Network Manager").GetComponent<NetworkPlayerSpawner>();
         photonView = GetComponent<PhotonView>();
-
-        XROrigin rig = FindObjectOfType<XROrigin>();
-        headRig = rig.transform.Find("SteamVRObjects/VRCamera");
-        leftHandRig = rig.transform.Find("SteamVRObjects/LeftHand");
-        rightHandRig = rig.transform.Find("SteamVRObjects/RightHand");
-
+        if (!networkPlayerSpawner.isKinect)
+        {
+            XROrigin rig = FindObjectOfType<XROrigin>();
+            headRig = rig.transform.Find("SteamVRObjects/VRCamera");
+            leftHandRig = rig.transform.Find("SteamVRObjects/LeftHand");
+            rightHandRig = rig.transform.Find("SteamVRObjects/RightHand");
+        }
+        else
+        {
+            GameObject.Find("KinectGameManager").GetComponent<KinectGameManager>().player = this.gameObject;
+            GameObject.Find("KinectGameManager").GetComponent<KinectGameManager>().StartWalking();
+            this.gameObject.GetComponent<Rigidbody>().freezeRotation = true;
+        }
         if(photonView.IsMine)
             photonView.RPC("LoadAvatar", RpcTarget.AllBuffered, PlayerPrefs.GetInt("AvatarID"));
 
@@ -54,28 +64,37 @@ public class NetworkPlayer : MonoBehaviour
         if (spawnedAvatar)
             Destroy(spawnedAvatar);
 
-        spawnedAvatar = Instantiate(avatars[index], transform);
-        AvatarInfo avatarInfo = spawnedAvatar.GetComponent<AvatarInfo>();
+        if (!networkPlayerSpawner.isKinect)
+        {
+            spawnedAvatar = Instantiate(avatars[index], transform);
+            AvatarInfo avatarInfo = spawnedAvatar.GetComponent<AvatarInfo>();
+            avatarInfo.head.SetParent(head, false);
+            avatarInfo.leftHand.SetParent(leftHand, false);
+            avatarInfo.rightHand.SetParent(rightHand, false);
 
-        avatarInfo.head.SetParent(head, false);
-        avatarInfo.leftHand.SetParent(leftHand, false);
-        avatarInfo.rightHand.SetParent(rightHand, false);
-
-        leftHandAnimator = avatarInfo.leftHandAnimator;
-        rightHandAnimator = avatarInfo.rightHandAnimator;
+            leftHandAnimator = avatarInfo.leftHandAnimator;
+            rightHandAnimator = avatarInfo.rightHandAnimator;
+        }
+        else
+        {
+            spawnedAvatar = Instantiate(kinectAvatars[index], transform);
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
         if(photonView.IsMine)
-        {          
-            MapPosition(head, headRig);
-            MapPosition(leftHand, leftHandRig);
-            MapPosition(rightHand, rightHandRig);
+        {
+            if (!networkPlayerSpawner.isKinect)
+            {
+                MapPosition(head, headRig);
+                MapPosition(leftHand, leftHandRig);
+                MapPosition(rightHand, rightHandRig);
 
-            UpdateHandAnimation(InputDevices.GetDeviceAtXRNode(XRNode.LeftHand), leftHandAnimator);
-            UpdateHandAnimation(InputDevices.GetDeviceAtXRNode(XRNode.RightHand), rightHandAnimator);
+                UpdateHandAnimation(InputDevices.GetDeviceAtXRNode(XRNode.LeftHand), leftHandAnimator);
+                UpdateHandAnimation(InputDevices.GetDeviceAtXRNode(XRNode.RightHand), rightHandAnimator);
+            }
         }
       
     }
